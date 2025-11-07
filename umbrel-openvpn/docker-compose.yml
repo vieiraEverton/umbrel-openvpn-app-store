@@ -24,9 +24,7 @@ services:
     command: >
       sh -c '
         /usr/local/openvpn_as/scripts/openvpnas --nodaemon &
-        pid=$!
     
-        # espera o serviço ficar operacional
         for i in $(seq 1 60); do
           /usr/local/openvpn_as/scripts/sacli ConfigQuery >/dev/null 2>&1 && break
           sleep 2
@@ -34,7 +32,7 @@ services:
     
         /usr/local/openvpn_as/scripts/sacli --user "openvpn" --new_pass "$APP_PASSWORD" SetLocalPassword || true
     
-        wait "$pid"
+        wait
       '
 
 #  web:
