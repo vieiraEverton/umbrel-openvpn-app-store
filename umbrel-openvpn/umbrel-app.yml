@@ -16,7 +16,7 @@ submission: https://github.com/vieiraEverton/umbrel-openvpn-app-store
 repo: https://github.com/vieiraEverton/umbrel-openvpn-app-store
 support: https://github.com/vieiraEverton/umbrel-openvpn-app-store/issues
 gallery:
-  - .img.png
+  - ./img.png
 releaseNotes: >-
   Add what's new in the latest version of openVpn.
 dependencies: []
