@@ -17,7 +17,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Sao_Paulo
-      - OVPN_AS_ADMIN_USER=openvpn
+      - APP_PASSWORD=${APP_PASSWORD}
+    command: >
+      sh -c '
+        sacli --user "openvpn" --new_pass $APP_PASSWORD SetLocalPassword
     volumes:
        - ${APP_DATA_DIR}/umbrel-openvpn:/usr/share/nginx/html:ro
     restart: always
@@ -55,6 +58,4 @@ services:
         EOF
         && nginx -g "daemon off;"
       '
-    volumes:
-      - ${APP_DATA_DIR}/config/.admin-pass:/usr/share/nginx/html/creds.txt:ro
     restart: always
