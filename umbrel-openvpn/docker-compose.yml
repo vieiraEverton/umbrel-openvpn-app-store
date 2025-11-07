@@ -13,6 +13,11 @@ services:
       - 9943:943
       - 9443:443
       - 1194:1194/udp
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+      - OVPN_AS_ADMIN_USER=openvpn
     volumes:
        - ${APP_DATA_DIR}/umbrel-openvpn:/usr/share/nginx/html:ro
     restart: always
