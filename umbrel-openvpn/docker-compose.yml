@@ -35,7 +35,7 @@ services:
         wait
       '
 
-  web:
+  web-openvpn:
     image: nginx:alpine
     depends_on:
       - openvpn-as
