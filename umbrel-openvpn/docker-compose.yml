@@ -29,9 +29,7 @@ services:
           /usr/local/openvpn_as/scripts/sacli ConfigQuery >/dev/null 2>&1 && break
           sleep 2
         done
-        # aplica a senha que o Umbrel gerou
         /usr/local/openvpn_as/scripts/sacli --user "openvpn" --new_pass "$APP_PASSWORD" SetLocalPassword || true
-        wait -n
       '
 
   web:
