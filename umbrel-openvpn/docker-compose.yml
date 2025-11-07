@@ -24,4 +24,3 @@ services:
     volumes:
       - ${APP_DATA_DIR}/umbrel-openvpn/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ${APP_DATA_DIR}/umbrel-openvpn/config/.admin-pass:/usr/share/nginx/html/creds.txt:ro
-      - ${APP_DATA_DIR}/umbrel-openvpn/portal:/usr/share/nginx/html:ro
