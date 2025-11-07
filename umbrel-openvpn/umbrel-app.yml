@@ -2,7 +2,7 @@ manifestVersion: 1
 id: umbrel-openvpn
 name: Umbrel OpenVpn
 tagline: "OpenVPN server with web portal"
-icon: ./icon.svg
+icon: https://www.svgrepo.com/show/331519/openvpn.svg
 category: Network
 version: "1.0.0"
 port: 943
