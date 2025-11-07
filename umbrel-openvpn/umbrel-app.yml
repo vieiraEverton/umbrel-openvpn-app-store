@@ -22,4 +22,4 @@ releaseNotes: >-
 dependencies: []
 path: "/admin/"
 defaultUsername: "openvpn"
-defaultPassword: "test"
+deterministicPassword: true
