@@ -18,13 +18,21 @@ services:
       - PGID=1000
       - TZ=America/Sao_Paulo
       - APP_PASSWORD=${APP_PASSWORD}
+    volumes:
+       - ${APP_DATA_DIR}/umbrel-openvpn:/openvpn
+    restart: always
     command: >
       sh -c '
-        sacli --user "openvpn" --new_pass $APP_PASSWORD SetLocalPassword
+        /usr/local/openvpn_as/scripts/openvpnas --nodaemon &
+        # espera o serviço ficar operacional
+        for i in $(seq 1 60); do
+          /usr/local/openvpn_as/scripts/sacli ConfigQuery >/dev/null 2>&1 && break
+          sleep 2
+        done
+        # aplica a senha que o Umbrel gerou
+        /usr/local/openvpn_as/scripts/sacli --user "openvpn" --new_pass "$APP_PASSWORD" SetLocalPassword || true
+        wait -n
       '
-    volumes:
-       - ${APP_DATA_DIR}/umbrel-openvpn:/usr/share/nginx/html:ro
-    restart: always
 
   web:
     image: nginx:alpine
