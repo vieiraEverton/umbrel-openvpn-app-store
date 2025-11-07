@@ -2,8 +2,8 @@ manifestVersion: 1
 id: umbrel-openvpn
 name: Umbrel OpenVpn
 tagline: "OpenVPN server with web portal"
-icon: https://svgur.com/i/mvA.svg
-category: Development
+icon: https://github.com/vieiraEverton/umbrel-openvpn-app-store/tree/master/umbrel-openvpn/icon.svg
+category: Network
 version: "1.0.0"
 port: 4000
 description: >-
@@ -11,16 +11,14 @@ description: >-
 
 developer: Everton Vieira Rodrigues
 website: https://github.com/vieiraEverton/umbrel-openvpn-app-store
-submitter: Everton
+submitter: Everton Vieira Rodrigues
 submission: https://github.com/vieiraEverton/umbrel-openvpn-app-store
 repo: https://github.com/vieiraEverton/umbrel-openvpn-app-store
 support: https://github.com/vieiraEverton/umbrel-openvpn-app-store/issues
 gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://github.com/vieiraEverton/umbrel-openvpn-app-store/tree/master/umbrel-openvpn/img.png
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  Add what's new in the latest version of openVpn.
 dependencies: []
 path: ""
 defaultUsername: ""
