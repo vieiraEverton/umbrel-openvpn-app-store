@@ -20,6 +20,6 @@ gallery:
 releaseNotes: >-
   Add what's new in the latest version of openVpn.
 dependencies: []
-path: ""
-defaultUsername: ""
-defaultPassword: ""
+path: "/admin/"
+defaultUsername: "openvpn"
+defaultPassword: "test"
