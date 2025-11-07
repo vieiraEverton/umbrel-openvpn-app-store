@@ -7,7 +7,7 @@ category: Network
 version: "1.0.0"
 port: 943
 description: >-
-  OpenVPN server exposing 9443 (TCP) and 1194 (UDP) with a simple web portal.
+  OpenVPN server exposing 943 (TCP) and 1194 (UDP) with portal 9443.
 
 developer: Everton Vieira Rodrigues
 website: https://github.com/vieiraEverton/umbrel-openvpn-app-store
