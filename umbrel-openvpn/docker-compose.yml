@@ -39,10 +39,5 @@ services:
     ports:
       - "9943:80"
     command: >
-      sh -c 'printf "
-        server {
-          listen 80 default_server;
-          return 301 https://openvpn-as:943$request_uri;
-        }
-      " > /etc/nginx/conf.d/default.conf && nginx -g \"daemon off;\"'
+      sh -c 'printf "%s" "$(printf "server { listen 80; return 301 https://\$host:9443\$request_uri; }")" > /etc/nginx/conf.d/default.conf; nginx -g "daemon off;"'
     restart: always
