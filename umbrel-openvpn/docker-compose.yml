@@ -31,6 +31,18 @@ services:
         done
     
         /usr/local/openvpn_as/scripts/sacli --user "openvpn" --new_pass "$APP_PASSWORD" SetLocalPassword || true
+
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.routing.reroute_gw" --value "true" ConfigPut
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.routing.reroute_dns" --value "true" ConfigPut
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.routing.block_outside_dns" --value "true" ConfigPut
+
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.dns.servers.0" --value "192.168.15.200" ConfigPut
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.dns.servers.1" --value "1.1.1.1" ConfigPut
+
+        /usr/local/openvpn_as/scripts/sacli --key "vpn.client.dns.fallback" --value "false" ConfigPut
+
+
+        /usr/local/openvpn_as/scripts/sacli start
     
         wait
       '

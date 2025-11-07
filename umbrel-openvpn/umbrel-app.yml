@@ -4,7 +4,7 @@ name: Umbrel OpenVpn
 tagline: "OpenVPN server with web portal"
 icon: https://www.svgrepo.com/show/331519/openvpn.svg
 category: Network
-version: "1.0.0"
+version: "1.1.0"
 port: 943
 description: >-
   OpenVPN server exposing 9943 portal and 1194 (UDP) with portal 9443 (TCP).
