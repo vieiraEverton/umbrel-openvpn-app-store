@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: umbrel-openvpn
+name: Umbrel OpenVpn
+tagline: "OpenVPN server with web portal"
+icon: https://svgur.com/i/mvA.svg
+category: Development
+version: "1.0.0"
+port: 4000
+description: >-
+  OpenVPN server exposing 9443 (TCP) and 1194 (UDP) with a simple web portal.
+
+developer: Everton Vieira Rodrigues
+website: https://github.com/vieiraEverton/umbrel-openvpn-app-store
+submitter: Everton
+submission: https://github.com/vieiraEverton/umbrel-openvpn-app-store
+repo: https://github.com/vieiraEverton/umbrel-openvpn-app-store
+support: https://github.com/vieiraEverton/umbrel-openvpn-app-store/issues
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+  - https://i.imgur.com/yyVG0Jb.jpeg
+releaseNotes: >-
+  Add what's new in the latest version of your app here.
+dependencies: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
