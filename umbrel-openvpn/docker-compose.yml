@@ -21,6 +21,7 @@ services:
     command: >
       sh -c '
         sacli --user "openvpn" --new_pass $APP_PASSWORD SetLocalPassword
+      '
     volumes:
        - ${APP_DATA_DIR}/umbrel-openvpn:/usr/share/nginx/html:ro
     restart: always
