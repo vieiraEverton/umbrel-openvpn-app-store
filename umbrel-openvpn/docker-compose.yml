@@ -35,37 +35,37 @@ services:
         wait
       '
 
-#  web:
-#    image: nginx:alpine
-#    depends_on:
-#      - openvpn-as
-#    command: >
-#      sh -c '
-#        cat >/etc/nginx/conf.d/umbrel.conf <<EOF
-#        server {
-#          listen 943;
-#
-#          location = / {
-#            root /usr/share/nginx/html;
-#            try_files /index.html =404;
-#          }
-#
-#          location = /creds.txt {
-#            root /usr/share/nginx/html;
-#            add_header Cache-Control "no-store";
-#          }
-#
-#          # tudo mais -> proxy para o Client UI HTTPS
-#          location / {
-#            proxy_pass https://openvpn-as:9943;
-#            proxy_set_header Host $host;
-#            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-#            proxy_set_header X-Forwarded-Proto $scheme;
-#            proxy_ssl_server_name on;
-#            proxy_ssl_verify off;
-#          }
-#        }
-#        EOF
-#        && nginx -g "daemon off;"
-#      '
-#    restart: always
+  web:
+    image: nginx:alpine
+    depends_on:
+      - openvpn-as
+    command: >
+      sh -c '
+        cat >/etc/nginx/conf.d/umbrel.conf <<EOF
+        server {
+          listen 943;
+
+          location = / {
+            root /usr/share/nginx/html;
+            try_files /index.html =404;
+          }
+
+          location = /creds.txt {
+            root /usr/share/nginx/html;
+            add_header Cache-Control "no-store";
+          }
+
+          # tudo mais -> proxy para o Client UI HTTPS
+          location / {
+            proxy_pass https://openvpn-as:9943;
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_ssl_server_name on;
+            proxy_ssl_verify off;
+          }
+        }
+        EOF
+        && nginx -g "daemon off;"
+      '
+    restart: always
